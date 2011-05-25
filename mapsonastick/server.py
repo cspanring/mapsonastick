@@ -26,7 +26,7 @@ except ImportError:
 # Maps directory which contains KML, mbtiles, etc.
 MAPS_DIR = 'Maps'
 
-DIST = 'mac'
+DIST = 'win'
 
 # Extensions of allowed downloads
 ALLOWED_EXTENSIONS = set(['kml', 'rss', 'kmz'])
