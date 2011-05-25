@@ -42,7 +42,15 @@ distributions are self-contained**
 #### Windows
 
 * [py2exe](http://www.py2exe.org/)
-* [flask](http://flask.pocoo.org/)
+* [flask](http://flask.pocoo.org/)  
+
+##### Run development server
+
+`C:\mapsonastick\mapsonastick>python server.py`
+
+##### Build
+
+`C:\mapsonastick>python setup_win.py py2exe`
 
 ### Layout
 
