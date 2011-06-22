@@ -123,9 +123,9 @@ var add_layer = {
    */
   kml: function (layer) {
       var l, kml_title,
-          args = OpenLayers.Util.getParameters();
+          args = OpenLayers.Util.getParameters(); 
       l = new OpenLayers.Layer.Vector(
-        layer.filename,
+        layer.filename.replace(".kml", "").replace(/-/gi, " "),
         {
           projection:'EPSG:4326',
           strategies:[new OpenLayers.Strategy.Fixed()],
@@ -162,7 +162,7 @@ var add_layer = {
                 }
               } catch(err) { }
               if (this.features.length == 1) {
-                this.map.zoomToExtent(this.getDataExtent());
+                // this.map.zoomToExtent(this.getDataExtent());
                 this.map.zoomTo(10); // TODO: zoom to max provided by baselayer
               }
               else {
