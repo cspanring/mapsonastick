@@ -30,7 +30,7 @@
     </div>
     <div class='openlayers-blockswitcher'>
 	  <div class='layers-legend'>
-	    <a id='show-legend' href="#">Show Legend</a>
+	    <a id='show-legend' href="#"><strong>Legend for NERAC layers</strong></a>
 	  </div>
       <div class='layers base'>
         <h2 class='layers-title'>Base layers</h2>
@@ -63,13 +63,16 @@
   <div id='shadow-left'></div>
   <div id='canvas'>
     <div id='map'></div>
+   	<div id="nerac-logo">
+    	<a href="http://www.nerac.us/" title="Northeast Homeland Security Regional Advisory Council (NERAC)"><img alt="Northeast Homeland Security Regional Advisory Council (NERAC)" src="{{ url_for('static', filename='images/nerac-logo-80.png') }}" width="80" height="80"></a>
+	</div>
   </div>
   <div id='footer'>
       A project of 
       <a href="http://www.mapc.org/">MAPC</a> and 
       <a href="http://www.nerac.us/">NERAC</a> | 
 	  Data sources: MAPC, NERAC, MassGIS, MassDOT |
-	  June 2011
+	  For official use only, June 2011
     <span class="copyright">
       &copy; 2010 <a href="http://mapbox.com/">
         <img src='{{ url_for('static', filename='images/mapbox-small.png') }}' class='icon'/>
@@ -90,7 +93,7 @@
     <div id='kml-window-inner'>
 		<div class='kml-url-input-wrapper'>
 			<a href="#" id='legend-close'>Close</a>
-			<h2>Map legend for NERAC default layers</h2>
+			<h2>Legend for NERAC layers</h2>
 			<ul class='legend'>
 				<li><img src="/static/images/tcp_primary.png" />Primary Traffic Control Point</li>
 				<li><img src="/static/images/tcp_secondary.png" />Secondary Traffic Control Point</li>
