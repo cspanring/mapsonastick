@@ -309,7 +309,7 @@ $(window).load(
 
     OpenLayersPlusBlockswitcher.hattach($('.openlayers-blockswitcher'), map);
 
-    $(function(){ $("input[type='file']").uniform({fileBtnText: 'Upload KML'});});
+    $(function(){ $("input[type='file']").uniform({fileBtnText: 'Add local KML layer'});});
 
     $('#kml-url-add').toggle(
       function() {
