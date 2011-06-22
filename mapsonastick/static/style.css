@@ -803,7 +803,7 @@ div#documentation-page {
 /**
  * KML Form
  */
-div#kml_window {
+div#kml_window, div#legend_window {
   z-index: 5000;
   display: none;
   position: absolute;
@@ -814,7 +814,7 @@ div#kml_window {
   background-image:url(images/kml_window.png);
 }
 
-  div#kml_window label {
+  div#kml_window label, div#legend_window label {
     display: block;
     color:#000;
     }
@@ -833,31 +833,35 @@ div#kml_window {
     margin:10px auto;
   }
 
-  div#kml_window div.diagram {
+  div#kml_window div.diagram, div#legend_window div.diagram {
     padding: 10px;
   }
     
-    div#kml_window div.diagram img {
+    div#kml_window div.diagram img , div#legend_window div.diagram img{
       display:block;
       margin:10px auto;
     }
     
-    div#kml_window h3 {
+    div#kml_window h3, div#legend_window h3 {
       font-size:13px;
       font-weight:bold;
       margin:10px;
     }
 
-    div#kml_window div.diagram ol {
+    div#kml_window div.diagram ol, div#legend_window div.diagram ol {
       margin:0;
     }
 
-  div#kml_window div.kml-url-input-wrapper {
+  div#kml_window div.kml-url-input-wrapper, div#legend_window div.kml-url-input-wrapper {
     padding:15px;
   }
   
   #kml-file-chooser,
-  #kml-file-input-cancel { display: block; }
+  #kml-file-input-cancel, #legend-close { display: block; }
+  
+  #legend-close {
+	text-align: right;
+  }
 
 
 div.loading {
@@ -871,3 +875,24 @@ div.loading {
   }
 
 div.page-loading { top:40px; }
+
+.layers-legend {
+  padding: 4px 8px;
+}
+
+#header h1 {
+	margin-left: 30px;
+	padding-left: 36px;
+	background-image: url(images/nerac-logo-small.png);
+	background-repeat: no-repeat;
+}
+
+ul.legend {
+	list-style-type: none;
+}
+
+ul.legend li img {
+	height: 24px;
+	margin-right: 4px;
+}
+

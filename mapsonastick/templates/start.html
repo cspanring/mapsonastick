@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-	<title>Maps on a Stick</title>
+	<title>NERAC Emergency Response Mapping for Evacuation Planning</title>
   <!-- big libraries -->
   <script src='{{ url_for('static', filename='js/OpenLayers.js') }}'></script>
   <script src='{{ url_for('static', filename='js/jquery-1.3.2.js') }}'></script>
@@ -19,7 +19,7 @@
 </head>
 <body>
   <div id='header'>
-    <h1 class="site-name">Maps on a Stick</h1>
+    <h1 class="site-name">NERAC Emergency Response Mapping for Evacuation Planning</h1>
   </div>
   <div id='left'>
     <div class='kml-input'>
@@ -29,6 +29,9 @@
       <a id='kml-url-add' href="#">or online kml</a>
     </div>
     <div class='openlayers-blockswitcher'>
+	  <div class='layers-legend'>
+	    <a id='show-legend' href="#">Show Legend</a>
+	  </div>
       <div class='layers base'>
         <h2 class='layers-title'>Base layers</h2>
           <div class='layers-content'>
@@ -62,16 +65,15 @@
     <div id='map'></div>
   </div>
   <div id='footer'>
-    <span class="moas">Maps on a Stick</span>
-      | a project of 
-      <a href="http://www.mapbox.com/">MapBox</a> and 
-      <a href="http://www.developmentseed.org/">Development Seed</a>
-      |  <a href="https://github.com/mapbox/mapsonastick/wiki/Getting-Started-with-Maps-on-a-Stick">Help</a>
+      A project of 
+      <a href="http://www.mapc.org/">MAPC</a> and 
+      <a href="http://www.nerac.us/">NERAC</a> | 
+	  Data sources: MAPC, NERAC, MassGIS, MassDOT |
+	  June 2011
     <span class="copyright">
       &copy; 2010 <a href="http://mapbox.com/">
         <img src='{{ url_for('static', filename='images/mapbox-small.png') }}' class='icon'/>
-         MapBox</a> 
-      | <a href="http://mapbox.com/tos">Terms of Service</a>
+         MapBox</a>
     </span>
   </div>
   <div id='kml_window'>
@@ -80,8 +82,38 @@
         <input type='text' name='kml-url' size='55' id='kml-url' />
         <input type='button' name='kml-url-submit' id='kml-url-submit' value='Add KML' />
         or <a href="#" id='kml-url-input-cancel'>Close</a>
-        <p>Enter a URL that points directly to an online KML file eg. <code>http://www.haitiaidmap.org/kml</code>. KMZ files must be uploaded.</p>
+        <p>Enter a URL that points directly to an online KML file eg. <code>http://www.nerac.us/kml</code>. KMZ files must be uploaded.</p>
       </div>
+    </div>
+  </div>
+  <div id='legend_window'>
+    <div id='kml-window-inner'>
+		<div class='kml-url-input-wrapper'>
+			<a href="#" id='legend-close'>Close</a>
+			<h2>Map legend for NERAC default layers</h2>
+			<ul class='legend'>
+				<li><img src="/static/images/tcp_primary.png" />Primary Traffic Control Point</li>
+				<li><img src="/static/images/tcp_secondary.png" />Secondary Traffic Control Point</li>
+				<li><img src="/static/images/firestation.png" />Fire Station</li>
+				<li><img src="/static/images/policestation.png" />Police Station</li>
+				<li><img src="/static/images/municipaloffice.png" />Municipal Offices</li>
+				<li><img src="/static/images/court.png" />Court</li>
+				<li><img src="/static/images/publichealthoffice.png" />Public Health Office</li>
+				<li><img src="/static/images/hospital.png" />Hospital</li>
+				<li><img src="/static/images/transitfacility.png" />Transit Facility</li>
+				<li><img src="/static/images/icerink.png" />Ice Rink</li>
+				<li><img src="/static/images/animalshelter.png" />Animal Shelter</li>
+				<li><img src="/static/images/school.png" />School</li>
+				<li><img src="/static/images/college.png" />College or University</li>
+				<li><img src="/static/images/specialpopulation.png" />Special Populations</li>
+				<li><img src="/static/images/childcare.png" />Child Care Facility</li>
+				<li><img src="/static/images/residentialcare.png" />Residential Care</li>
+				<li><img src="/static/images/prison.png" />Prison</li>
+				<li><img src="/static/images/dam.png" />Dam</li>
+				<li><img src="/static/images/hazmatsite.png" />Hazmat Site</li>
+				<li><img src="/static/images/other.png" />Other</li>
+			</ul>
+		</div>
     </div>
   </div>
   <script type="text/html" name="page-loading">
