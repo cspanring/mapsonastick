@@ -35,7 +35,7 @@ a {
   /*-moz-background-clip:border;
   -moz-background-inline-policy:continuous;
   -moz-background-origin:padding;*/
-  background:#404040 url(../images/gradient.png) 0 -1px repeat-x;
+  background:#404040 url(images/gradient.png) 0 -1px repeat-x;
   height:30px;
   line-height:40px;
   overflow:hidden;
@@ -56,7 +56,7 @@ h1.site-name {
 * Superchill footer ==================================================
 */
 #footer {
-  background:#eee url(../images/gradient.png) 0 0 repeat-x;
+  background:#eee url(images/gradient.png) 0 0 repeat-x;
   color:#555;
   text-shadow: 0 1px 0 #fff;
 
@@ -83,7 +83,7 @@ h1.site-name {
     #footer a:hover { color:#6688AA; }
 
   #footer a.ds {
-    background: url(../images/ds.gif) no-repeat;
+    background: url(images/ds.gif) no-repeat;
     z-index: 50000;
     border: 0px;
     bottom: 5px;
@@ -191,7 +191,7 @@ div.olPopupContent div.ol-popup-name {
   padding:10px;
 
   color:#fff;
-  background:url(../images/popup.png);
+  background:url(images/popup.png);
 }
 
 div.olPopupContent div.ol-popup-name div.meta {
@@ -268,7 +268,7 @@ div.olPopupContent div.ol-popup-name div.meta {
 /* Items */
 div.form-item {
     border-top:1px solid #fff;
-    background:#f8f8f8 url(../images/bleed.gif) 0px 100% repeat-x;
+    background:#f8f8f8 url(images/bleed.gif) 0px 100% repeat-x;
     padding:9px 10px 10px;
 }
 
@@ -318,7 +318,7 @@ div.uploader span.action,
   text-shadow: 0 1px 0 #fff;
 
   color:#4d4d4d;
-  background:#fafafa url(../images/gradient.png) 0 0 repeat-x;
+  background:#fafafa url(images/gradient.png) 0 0 repeat-x;
   padding:0px 20px;
   margin:0px;
   height:30px;
@@ -466,7 +466,7 @@ div.uploader input {
   table tr.even,
   table tr.odd {
     border-top:1px solid #fff;
-    background:#f8f8f8 url(../images/bleed.gif) 0px 100% repeat-x;
+    background:#f8f8f8 url(images/bleed.gif) 0px 100% repeat-x;
 }
 
 table tr th,
@@ -493,7 +493,7 @@ div.fieldset table { margin:0px; }
 }
 
 #stick_close {
-  background: url('../images/openlayers/close.png');
+  background: url('images/openlayers/close.png');
   cursor: pointer;
 }
 
@@ -517,7 +517,7 @@ label {
 }
 
 #map {
-  background:#ddd url(../images/checker-bg.png) 0% 0% repeat;
+  background:#ddd url(images/checker-bg.png) 0% 0% repeat;
   bottom: 30px;
   position: absolute;
   top: 30px;
@@ -574,7 +574,7 @@ div.openlayers-blockswitcher div.radio span.icon {
   float:left;
   width:20px;
   height:20px;
-  background:transparent url(../images/sprite.png) no-repeat scroll 0 -2px;
+  background:transparent url(images/sprite.png) no-repeat scroll 0 -2px;
   margin-right:10px;
   margin-bottom:5px;
   cursor:pointer;
@@ -595,7 +595,7 @@ div.openlayers-blockswitcher a.layer-zoom {
   float:left;
   width:20px;
   height:20px;
-  background:transparent url(../images/sprite.png) no-repeat scroll -375px -65px;
+  background:transparent url(images/sprite.png) no-repeat scroll -375px -65px;
   margin-right:5px;
   margin-bottom:5px;
   cursor:pointer;
@@ -635,7 +635,7 @@ div.openlayers-map #block-openlayers_plus-blockswitcher h2.block-title {
   -moz-background-inline-policy:continuous;
   -moz-background-origin:padding;
   -moz-border-radius-bottomright:5px;
-  background:#203830 url(../images/sprite.png) no-repeat scroll -365px -90px;
+  background:#203830 url(images/sprite.png) no-repeat scroll -365px -90px;
   color:#FFFFFF;
   font-size:15px;
   font-weight:bold;
@@ -737,7 +737,7 @@ div.openlayers-blockswitcher span.key {
   background-color: white;
 }
 .mapbox-branding {
-  background: url(../images/mapbox.png);
+  background: url(images/mapbox.png);
   float: left;
   clear: left;
   margin-right: 10px;
@@ -811,7 +811,7 @@ div#kml_window, div#legend_window {
   right: 0;
   top: 40px;
   bottom: 30px;
-  background-image:url(../images/kml_window.png);
+  background-image:url(images/kml_window.png);
 }
 
   div#kml_window label, div#legend_window label {
@@ -865,7 +865,7 @@ div#kml_window, div#legend_window {
 
 
 div.loading {
-  background:#eee url(../images/swirly.gif) 50% 50% no-repeat;
+  background:#eee url(images/swirly.gif) 50% 50% no-repeat;
   opacity:.5;
   position:absolute;
   left:0px;
@@ -879,8 +879,6 @@ div.page-loading { top:40px; }
 .layers-legend {
   padding: 4px 8px;
 }
-
-/* Legend */
 
 ul.legend {
 	list-style-type: none;
@@ -901,28 +899,28 @@ ul.legend li img {
 
 div.openlayers-blockswitcher div.form-item {
 	padding-left: 28px;
-	background-image: url("../images/nerac-logo-24.png");
+	background-image: url("images/nerac-logo-24.png");
 	background-repeat: no-repeat;
 	background-position: 2px 2px;
 	background-size: 24px;
 }
 
-#layer-animal-shelters { background-image: url("../images/animalshelter.png"); }
-#layer-child-care-facilities { background-image: url("../images/childcare.png"); }
-#layer-colleges { background-image: url("../images/college.png"); }
-#layer-courts { background-image: url("../images/court.png"); }
-#layer-dams { background-image: url("../images/dam.png"); }
-#layer-fire-stations { background-image: url("../images/firestation.png"); }
-#layer-hazmat-sites { background-image: url("../images/hazmatsite.png"); }
-#layer-hospitals { background-image: url("../images/hospital.png"); }
-#layer-ice-rinks { background-image: url("../images/icerink.png"); }
-#layer-municipal-offices { background-image: url("../images/municipaloffice.png"); }
-#layer-others { background-image: url("../images/other.png"); }
-#layer-police-stations { background-image: url("../images/policestation.png"); }
-#layer-prisons { background-image: url("../images/prison.png"); }
-#layer-public-health-offices { background-image: url("../images/publichealthoffice.png"); }
-#layer-residential-care { background-image: url("../images/residentialcare.png"); }
-#layer-schools { background-image: url("../images/school.png"); }
-#layer-special-populations { background-image: url("../images/specialpopulation.png"); }
-#layer-traffic-control-points { background-image: url("../images/tcp_primary.png"); }
-#layer-transit-facilities { background-image: url("../images/transitfacility.png"); }
+#layer-animal-shelters { background-image: url("images/animalshelter.png"); }
+#layer-child-care-facilities { background-image: url("images/childcare.png"); }
+#layer-colleges { background-image: url("images/college.png"); }
+#layer-courts { background-image: url("images/court.png"); }
+#layer-dams { background-image: url("images/dam.png"); }
+#layer-fire-stations { background-image: url("images/firestation.png"); }
+#layer-hazmat-sites { background-image: url("images/hazmatsite.png"); }
+#layer-hospitals { background-image: url("images/hospital.png"); }
+#layer-ice-rinks { background-image: url("images/icerink.png"); }
+#layer-municipal-offices { background-image: url("images/municipaloffice.png"); }
+#layer-others { background-image: url("images/other.png"); }
+#layer-police-stations { background-image: url("images/policestation.png"); }
+#layer-prisons { background-image: url("images/prison.png"); }
+#layer-public-health-offices { background-image: url("images/publichealthoffice.png"); }
+#layer-residential-care { background-image: url("images/residentialcare.png"); }
+#layer-schools { background-image: url("images/school.png"); }
+#layer-special-populations { background-image: url("images/specialpopulation.png"); }
+#layer-traffic-control-points { background-image: url("images/tcp_primary.png"); }
+#layer-transit-facilities { background-image: url("images/transitfacility.png"); }
