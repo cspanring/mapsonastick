@@ -876,12 +876,6 @@ div.loading {
 
 div.page-loading { top:40px; }
 
-.layers-legend {
-	padding: 4px 8px;
-  	border-bottom: 1px solid #E8E8E8;
-    border-top: 1px solid #FFFFFF;
-}
-
 ul.legend {
 	list-style-type: none;
 }
