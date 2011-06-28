@@ -9,6 +9,7 @@
   <!-- small libraries -->
   <script src='{{ url_for('static', filename='js/KMZ.js') }}'></script>
   <script src='{{ url_for('static', filename='js/jquery.uniform.js') }}'></script>
+ 
   <!-- custom code -->
   <script src='{{ url_for('static', filename='js/defaults.js') }}'></script>
   <script src='{{ url_for('static', filename='js/mapbox.js') }}'></script>
@@ -30,8 +31,14 @@
     </div>
     <div class='openlayers-blockswitcher'>
 	  <div class='layers-legend'>
-	    <a id='show-legend' href="#"><strong>Legend for NERAC layers</strong></a>
+	    <a id='show-legend' href="#"><strong>Show legend for NERAC layers</strong></a>
 	  </div>
+	  	<select id="town-select">
+          <option value="">Zoom to your Municipality</option>
+          <option>Town B</option>
+          <option>Town C</option>
+          <option>Town D</option>
+        </select>
       <div class='layers base'>
         <h2 class='layers-title'>Base layers</h2>
           <div class='layers-content'>
