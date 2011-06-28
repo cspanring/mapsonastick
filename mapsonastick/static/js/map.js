@@ -301,7 +301,35 @@ $(window).load(
     });
 	
     load_layers();
+
+    // load geojson
+    // loop through file and create selector > options, value = id
+    // selector on change load id.properties.geometry.coordinates
+    // get bounds, map zoom to bounds
     
+    $.getJSON('static/js/nerac_towns.geojson', function(data) {
+        
+        var townlist = [];
+        var geoJSON = new OpenLayers.Format.GeoJSON();
+        
+        $.each(data.features, function(key, feature) {
+	        $('<option value="' + key + '">' + feature.properties.name + '</option>').appendTo($('#town-select'));
+	        townlist.push(feature.geometry);
+	    });
+	   
+	    $('#town-select').change(function () {
+	   		town = $("#town-select option:selected").val();
+	   		if (town !== '') {
+	   			var town_geometry = geoJSON.read(townlist[town], 'Geometry');
+	   			var town_extent = town_geometry.getBounds();
+	   			// zoom map to town extent
+	   			map.zoomToExtent(town_extent.transform(map.displayProjection, map.projection));
+	   		}
+        })
+        .trigger('change');
+	     
+    });   
+   
     selectControl = new OpenLayers.Control.SelectFeature([],
         {onSelect: onFeatureSelect, onUnselect: onFeatureUnselect});
     map.addControl(selectControl);
