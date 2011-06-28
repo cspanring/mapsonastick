@@ -119,7 +119,8 @@ OpenLayersPlusBlockswitcher.redraw = function() {
 
         // Create input element
         var inputType = (baseLayer) ? 'radio' : 'checkbox';
-        var inputElem = $('.factory .' + inputType, this.blockswitcher).clone();
+        var layerName = layer.title || layer.name;
+        var inputElem = $('.factory .' + inputType, this.blockswitcher).clone().attr('id', 'layer-' + layerName.replace(/ /gi, "-").toLowerCase());
         var layerTools = $('.factory .layer-tools').clone();
 
         // Append to container
@@ -129,7 +130,7 @@ OpenLayersPlusBlockswitcher.redraw = function() {
         $(inputElem).prepend(layerTools);
 
         // Set label text
-        $('label', inputElem).append((layer.title !== undefined) ? layer.title : layer.name);
+        $('label', inputElem).append(layerName);
 
         $('a.layer-zoom', inputElem).click(
           function() { return OpenLayersPlusBlockswitcher.layerZoom(this); })

@@ -560,7 +560,7 @@ div.openlayers-blockswitcher h2.layers-title, div.openlayers-blockswitcher div.f
   border-top:1px solid #fff;
   border-bottom:1px solid #E8E8E8;
   line-height:20px;
-  padding:4px 5px 4px 5px;
+  padding: 4px 5px 4px 5px;
 }
 
 div.openlayers-blockswitcher div.radio {
@@ -895,3 +895,32 @@ ul.legend li img {
 	bottom: 35px;
 }
 
+/* layer list icons where available */
+
+div.openlayers-blockswitcher div.form-item {
+	padding-left: 28px;
+	background-image: url("images/nerac-logo-24.png");
+	background-repeat: no-repeat;
+	background-position: 2px 2px;
+	background-size: 24px;
+}
+
+#layer-animal-shelters { background-image: url("images/animalshelter.png"); }
+#layer-child-care-facilities { background-image: url("images/childcare.png"); }
+#layer-colleges { background-image: url("images/college.png"); }
+#layer-courts { background-image: url("images/court.png"); }
+#layer-dams { background-image: url("images/dam.png"); }
+#layer-fire-stations { background-image: url("images/firestation.png"); }
+#layer-hazmat-sites { background-image: url("images/hazmatsite.png"); }
+#layer-hospitals { background-image: url("images/hospital.png"); }
+#layer-ice-rinks { background-image: url("images/icerink.png"); }
+#layer-municipal-offices { background-image: url("images/municipaloffice.png"); }
+#layer-others { background-image: url("images/other.png"); }
+#layer-police-stations { background-image: url("images/policestation.png"); }
+#layer-prisons { background-image: url("images/prison.png"); }
+#layer-public-health-offices { background-image: url("images/publichealthoffice.png"); }
+#layer-residential-care { background-image: url("images/residentialcare.png"); }
+#layer-schools { background-image: url("images/school.png"); }
+#layer-special-populations { background-image: url("images/specialpopulation.png"); }
+#layer-traffic-control-points { background-image: url("images/tcp_primary.png"); }
+#layer-transit-facilities { background-image: url("images/transitfacility.png"); }
