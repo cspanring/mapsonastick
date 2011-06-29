@@ -210,16 +210,13 @@ OpenLayersPlusBlockswitcher.layerZoom = function(element) {
  * Click handler that activates or deactivates a layer.
  */
 OpenLayersPlusBlockswitcher.layerClick = function(element) {
+	
   var layer = $(element).data('layer');
   if (layer.isBaseLayer) {
+  	console.log("baselayer click");
     $('.layers.base .layers-content .activated').removeClass('activated');
     $(element).addClass('activated');
     layer.map.setBaseLayer(layer);
-    if (layer.options.ext !== null &&
-      layer.options.ext.containsBounds(map.getExtent())) {
-      layer.map.zoomToExtent(layer.options.ext);
-      layer.map.zoomIn();
-    }
   }
   else {
     layer.setVisibility($(element).is(':checked'));

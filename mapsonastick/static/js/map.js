@@ -161,13 +161,6 @@ var add_layer = {
                   OpenLayersPlusBlockswitcher.redraw();
                 }
               } catch(err) { }
-              if (this.features.length == 1) {
-                // this.map.zoomToExtent(this.getDataExtent());
-                this.map.zoomTo(10); // TODO: zoom to max provided by baselayer
-              }
-              else {
-                // this.map.zoomToExtent(this.getDataExtent());
-              }
             }
             else {
               moas_message('', 'This KML file (' + layer.filename + 
