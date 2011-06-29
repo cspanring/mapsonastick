@@ -294,12 +294,8 @@ $(window).load(
     });
 	
     load_layers();
-
-    // load geojson
-    // loop through file and create selector > options, value = id
-    // selector on change load id.properties.geometry.coordinates
-    // get bounds, map zoom to bounds
-    
+	
+	// create town switcher in layer list
     $.getJSON('static/js/nerac_towns.geojson', function(data) {
         
         var townlist = [];

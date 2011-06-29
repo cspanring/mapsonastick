@@ -213,7 +213,6 @@ OpenLayersPlusBlockswitcher.layerClick = function(element) {
 	
   var layer = $(element).data('layer');
   if (layer.isBaseLayer) {
-  	console.log("baselayer click");
     $('.layers.base .layers-content .activated').removeClass('activated');
     $(element).addClass('activated');
     layer.map.setBaseLayer(layer);
