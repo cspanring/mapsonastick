@@ -1066,22 +1066,65 @@ div.openlayers-blockswitcher div.form-item {
 	background-size: 24px;
 }
 
-#layer-animal-shelters { background-image: url("images/animalshelter.png"); }
-#layer-child-care-facilities { background-image: url("images/childcare.png"); }
-#layer-colleges { background-image: url("images/college.png"); }
+#layer-animal-shelters { 
+	background-image: url("images/animal-shelter.png"); 
+	background-position: 0px 5px;
+}
+#layer-bridges { 
+	background-image: url("images/bridge.png"); 
+	background-position: 0px 4px;
+}
+#layer-child-care-facilities { 
+	background-image: url("images/child-care-facility.png"); 
+	background-position: 0px 5px;
+}
+#layer-colleges { 
+	background-image: url("images/college.png"); 
+	background-position: 0px 5px;
+}
 #layer-courts { background-image: url("images/court.png"); }
-#layer-dams { background-image: url("images/dam.png"); }
-#layer-fire-stations { background-image: url("images/firestation.png"); }
-#layer-hazmat-sites { background-image: url("images/hazmatsite.png"); }
+#layer-dams { 
+	background-image: url("images/dam.png"); 
+	background-position: 0px 5px;
+}
+#layer-dpw { 
+	background-image: url("images/dpw.png"); 
+	background-position: 0px 5px;
+}
+#layer-elderly-populations { 
+	background-image: url("images/elderly-population.png"); 
+	background-position: 0px 5px;
+}
+#layer-emergency-operations-center { background-image: url("images/emergency-operations-center.png"); }
+#layer-fire-stations { background-image: url("images/fire.png"); }
+#layer-hazmat-sites { background-image: url("images/hazmat-site.png"); }
+#layer-helicopter-landing-zones { background-image: url("images/helicopter-landing-zone.png"); }
+#layer-high-probability-sites { background-image: url("images/high-probability-site.png"); }
 #layer-hospitals { background-image: url("images/hospital.png"); }
-#layer-ice-rinks { background-image: url("images/icerink.png"); }
-#layer-municipal-offices { background-image: url("images/municipaloffice.png"); }
-#layer-others { background-image: url("images/other.png"); }
-#layer-police-stations { background-image: url("images/policestation.png"); }
+#layer-ice-rinks { background-image: url("images/ice-rink.png"); }
+#layer-municipal-offices { 
+	background-image: url("images/municipal-office.png"); 
+	background-position: 0px 5px;
+}
+#layer-other { background-image: url("images/other.png"); }
+#layer-police-stations { background-image: url("images/police.png"); }
+#layer-power-plants { 
+	background-image: url("images/power-plant.png"); 
+	background-position: 0px 5px;
+}
 #layer-prisons { background-image: url("images/prison.png"); }
-#layer-public-health-offices { background-image: url("images/publichealthoffice.png"); }
-#layer-residential-care { background-image: url("images/residentialcare.png"); }
-#layer-schools { background-image: url("images/school.png"); }
-#layer-special-populations { background-image: url("images/specialpopulation.png"); }
+#layer-public-health-offices { background-image: url("images/public-health-office.png"); }
+#layer-schools { 
+	background-image: url("images/school.png"); 
+	background-position: 0px 5px;
+}
+#layer-shelters { background-image: url("images/shelter.png"); }
+#layer-special-populations { 
+	background-image: url("images/special-population.png"); 
+	background-position: 0px 5px;
+}
 #layer-traffic-control-points { background-image: url("images/tcp_primary.png"); }
-#layer-transit-facilities { background-image: url("images/transitfacility.png"); }
+#layer-transit-facilities { 
+	background-image: url("images/transit-facility.png"); 
+	background-position: 0px 5px;
+}
