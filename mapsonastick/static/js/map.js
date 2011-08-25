@@ -146,13 +146,6 @@ var add_layer = {
       l.events.on({
           'loadend': function() {
             if (this.features.length > 0) {
-			  // TODO: vectors are loaded before user can cancel
-              if (this.features.length > 900 && // 900 is an arbitary number
-                !moas_confirm('', 'This KML file (' + layer.filename + ') contains over ' +
-                'nine hundred points. It may cause your browser to operate slowly. Are you ' +
-                'sure you want to load this layer?')) {
-                  this.map.removeLayer(this);
-              }
               try {
                 var kml_title = $(this.protocol.format.data).find('kml > Document > name').text();
                 if (kml_title !== "") {

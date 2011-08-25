@@ -120,6 +120,10 @@ OpenLayersPlusBlockswitcher.redraw = function() {
         // Create input element
         var inputType = (baseLayer) ? 'radio' : 'checkbox';
         var layerName = layer.title || layer.name;
+        for (l=0; l<10; l++) {
+        	// remove any number followed by an underscore, used as hack to adjust file+layer order
+        	layerName = layerName.replace(l + "_", "");
+        }
         var inputElem = $('.factory .' + inputType, this.blockswitcher).clone().attr('id', 'layer-' + layerName.replace(/ /gi, "-").toLowerCase());
         var layerTools = $('.factory .layer-tools').clone();
 

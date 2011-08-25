@@ -130,7 +130,7 @@ h1.site-name {
 }
 
 #shadow-left {
-  left: 250px;
+  left: 280px;
   right: auto;
   width: 1px;
   top: 5px;
@@ -231,7 +231,7 @@ div.olPopupContent div.ol-popup-name div.meta {
   -moz-background-origin:padding;
   background:#f2f2f2 none repeat scroll 0 0;
   float:left;
-  width:250px;
+  width:280px;
   bottom:15px;
   left:0;
   overflow:auto;
@@ -521,7 +521,7 @@ label {
   bottom: 30px;
   position: absolute;
   top: 30px;
-  left:250px;
+  left:280px;
   right:0;
 }
 
@@ -531,7 +531,7 @@ label {
   min-height:400px;
   width:100%;
   top: 30px;
-  left: 250px;
+  left: 280px;
 }
 
 #block-openlayers_plus-blockswitcher {
@@ -807,7 +807,7 @@ div#kml_window, div#legend_window {
   z-index: 5000;
   display: none;
   position: absolute;
-  left: 250px;
+  left: 280px;
   right: 0;
   top: 40px;
   bottom: 30px;
@@ -886,9 +886,16 @@ ul.legend li img {
 }
 
 #nerac-logo {
-	position: absolute;
-	right: 15px;
-	bottom: 35px;
+	float: left;
+	padding-left: 10px;
+	padding-top: 10px;
+	margin-right: 10px;
+}
+
+#disclaimer {
+	font-size: 16px;
+	padding-left: 10px;
+    padding-top: 20px;
 }
 
 /* Uniform styles */
@@ -1066,7 +1073,7 @@ div.openlayers-blockswitcher div.form-item {
 	background-size: 24px;
 }
 
-#layer-animal-shelters { 
+#layer-animal-shelters-and-veterinarians { 
 	background-image: url("images/animal-shelter.png"); 
 	background-position: 0px 5px;
 }
@@ -1128,3 +1135,5 @@ div.openlayers-blockswitcher div.form-item {
 	background-image: url("images/transit-facility.png"); 
 	background-position: 0px 5px;
 }
+#layer-secondary-traffic-control-points { background-image: url("images/traffic-control-point-secondary.png"); }
+#layer-primary-traffic-control-points { background-image: url("images/traffic-control-point-primary.png"); }
