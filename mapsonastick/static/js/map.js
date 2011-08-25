@@ -12,7 +12,7 @@
  * @version 2.0
  */
 
-var map, selectedFeature;
+var map, selectedFeature, townLayer;
 
 // message wrapper, replaceable by TileMill components
 function moas_message(title, message, type) {
@@ -261,6 +261,18 @@ function load_layers() {
     map.setBaseLayer(map.getLayersBy('isBaseLayer', true)[0]);
     map.zoomToExtent(map.getLayersBy('isBaseLayer', true)[0].options.ext);
     map.zoomIn();
+    
+    // layer showing boundaries of seleceted town
+    townLayer = new OpenLayers.Layer.Vector("Townlayer", {
+		styleMap: new OpenLayers.StyleMap({
+			strokeColor: "#FFFF00",
+			fillOpacity: 0,
+			strokeOpacity: 0.8,
+			strokeWidth: 6
+        })
+	});
+	map.addLayer(townLayer);
+    
   });
 }
 
@@ -292,24 +304,34 @@ $(window).load(
     $.getJSON('static/js/nerac_towns.geojson', function(data) {
         
         var townlist = [];
-        var geoJSON = new OpenLayers.Format.GeoJSON();
+        
+        // add GeoJSON parser
+        var parser = new OpenLayers.Format.GeoJSON({
+			'externalProjection': map.displayProjection,
+			'internalProjection': map.projection
+ 		});	
         
         $.each(data.features, function(key, feature) {
 	        $('<option value="' + key + '">' + feature.properties.name + '</option>').appendTo($('#town-select'));
-	        townlist.push(feature.geometry);
+	        townlist.push(feature);
 	    });
 	   
 	    $('#town-select').change(function () {
 	   		town = $("#town-select option:selected").val();
-	   		if (town !== '') {
-	   			var town_geometry = geoJSON.read(townlist[town], 'Geometry');
-	   			var town_extent = town_geometry.getBounds();
+	   		if (town !== '') {	
+	   			// remove all features from vector layer
+	   			townLayer.destroyFeatures()
+	   			// new town feature, we should only find one
+	   			var town_features = parser.read(townlist[town]);
+	   			// add feature to vector layer
+    			townLayer.addFeatures(town_features);
 	   			// zoom map to town extent
-	   			map.zoomToExtent(town_extent.transform(map.displayProjection, map.projection));
+	   			var town_extent = town_features[0].geometry.getBounds();
+	   			map.zoomToExtent(town_extent);
 	   		}
         })
         .trigger('change');
-	     
+	
     });   
    
     selectControl = new OpenLayers.Control.SelectFeature([],
