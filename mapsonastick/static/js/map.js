@@ -300,16 +300,16 @@ $(window).load(
 	
     load_layers();
 	
+	// add GeoJSON parser
+   	$.geoJSONparser = new OpenLayers.Format.GeoJSON({
+		'externalProjection': map.displayProjection,
+		'internalProjection': map.projection
+	});	
+	
 	// create town switcher in layer list
     $.getJSON('static/js/nerac_towns.geojson', function(data) {
         
         var townlist = [];
-        
-        // add GeoJSON parser
-        var parser = new OpenLayers.Format.GeoJSON({
-			'externalProjection': map.displayProjection,
-			'internalProjection': map.projection
- 		});	
         
         $.each(data.features, function(key, feature) {
 	        $('<option value="' + key + '">' + feature.properties.name + '</option>').appendTo($('#town-select'));
@@ -322,7 +322,7 @@ $(window).load(
 	   			// remove all features from vector layer
 	   			townLayer.destroyFeatures()
 	   			// new town feature, we should only find one
-	   			var town_features = parser.read(townlist[town]);
+	   			var town_features = $.geoJSONparser.read(townlist[town]);
 	   			// add feature to vector layer
     			townLayer.addFeatures(town_features);
 	   			// zoom map to town extent
@@ -333,6 +333,34 @@ $(window).load(
         .trigger('change');
 	
     });   
+    
+    // jquery type-ahead search
+    $.getJSON('static/js/nerac_search.geojson', function(searchindex) {
+    	
+    	var search_index = [];
+    	
+		$.each(searchindex.features, function(key, feature) {
+	        search_index.push(feature.properties.searchterm);
+	    });	    
+    	
+		$("#search-field").autocomplete(search_index, {
+			matchContains: true,
+			formatItem: function(data, i, total) {
+				// remove feature ID from search string
+				search_term = data[0].split("|")[0];
+				return search_term.substring(0, search_term.length - 1);
+			}
+		});
+    	
+		$('#search-field').result(function(event, data, formatted) {
+			var search_id = data[0].split("|")[1];
+			// go zoom to found feature
+			var search_feature = $.geoJSONparser.read(searchindex.features[search_id])[0];
+			var search_feature_extent = search_feature.geometry.getBounds();
+	   		map.zoomToExtent(search_feature_extent);
+		});
+    	
+    });
    
     selectControl = new OpenLayers.Control.SelectFeature([],
         {onSelect: onFeatureSelect, onUnselect: onFeatureUnselect});
@@ -343,7 +371,7 @@ $(window).load(
 
     $(function(){ 
     	$("input[type='file']").uniform({fileBtnText: 'Add local KML layer'});
-    	$("#town-select").uniform();
+    	$("#town-select").uniform({fileBtnText: 'search'});
     });
 
     $('#kml-url-add').toggle(

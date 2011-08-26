@@ -9,14 +9,15 @@
   <!-- small libraries -->
   <script src='{{ url_for('static', filename='js/KMZ.js') }}'></script>
   <script src='{{ url_for('static', filename='js/jquery.uniform.js') }}'></script>
- 
+  <link rel='stylesheet' href='{{ url_for('static', filename='css/jquery.autocomplete.css') }}' type='text/css' media='screen' />
+  <script src='{{ url_for('static', filename='js/jquery.autocomplete.js') }}'></script>
   <!-- custom code -->
   <script src='{{ url_for('static', filename='js/defaults.js') }}'></script>
   <script src='{{ url_for('static', filename='js/mapbox.js') }}'></script>
   <script src='{{ url_for('static', filename='js/template.js') }}'></script>
   <script src='{{ url_for('static', filename='js/openlayers_blockswitcher.js') }}'></script>
   <script src='{{ url_for('static', filename='js/map.js') }}'></script>
- 	<link rel='stylesheet' href='{{ url_for('static', filename='style.css') }}' type='text/css' media='screen' />
+  <link rel='stylesheet' href='{{ url_for('static', filename='style.css') }}' type='text/css' media='screen' />
 </head>
 <body>
   <div id='header'>
@@ -29,8 +30,13 @@
 	  </div>
 	  <div id="disclaimer"><b>For official use only.</b><br>Not a public record.</div>
 	  <select id="town-select">
-        <option value="">Zoom to municipality:</option>
+        <option value="">Zoom to Municipality:</option>
       </select>
+      <div id="search-container">
+	  	<b>Search for Critical Infrastructure</b>
+	    <input type="text" id="search-field" /><br>
+	    Hit enter to zoom map to result.
+	  </div>
       <div class='layers base'>
         <h2 class='layers-title'>Base layers</h2>
           <div class='layers-content'>
