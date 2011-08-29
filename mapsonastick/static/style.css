@@ -874,7 +874,7 @@ div.loading {
   top:0px;
   }
 
-div.page-loading { top:40px; }
+div.page-loading { top: 0px; }
 
 ul.legend {
 	list-style-type: none;
