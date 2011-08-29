@@ -12,7 +12,7 @@
  * @version 2.0
  */
 
-var map, selectedFeature, townLayer;
+var map, selectedFeature, townLayer, searchResultLayer;
 
 // message wrapper, replaceable by TileMill components
 function moas_message(title, message, type) {
@@ -272,6 +272,18 @@ function load_layers() {
         })
 	});
 	map.addLayer(townLayer);
+	
+	// layer showing search result
+    searchResultLayer = new OpenLayers.Layer.Vector("Search Result", {
+    	visibility: false,
+		styleMap: new OpenLayers.StyleMap({
+			fillColor: "rgb(255,0,0)",
+			fillOpacity: 1,
+			pointRadius: 16,
+			graphicName: "x"
+        })
+	});
+	map.addLayer(searchResultLayer);
     
   });
 }
@@ -356,6 +368,10 @@ $(window).load(
 			var search_id = data[0].split("|")[1];
 			// go zoom to found feature
 			var search_feature = $.geoJSONparser.read(searchindex.features[search_id])[0];
+			// remove existing search result and turn layer on
+			searchResultLayer.destroyFeatures();
+			searchResultLayer.setVisibility(true);
+			searchResultLayer.addFeatures([search_feature]);
 			var search_feature_extent = search_feature.geometry.getBounds();
 	   		map.zoomToExtent(search_feature_extent);
 		});

@@ -1067,6 +1067,11 @@ div.selector select {
 	width: 250px;
 }
 
+#searchicon {
+	font-weight: bold;
+	color: #FF0000;
+}
+
 #town-select option {
 	padding-left: 4px;
 }
@@ -1145,3 +1150,7 @@ div.openlayers-blockswitcher div.form-item {
 }
 #layer-secondary-traffic-control-points { background-image: url("images/traffic-control-point-secondary.png"); }
 #layer-primary-traffic-control-points { background-image: url("images/traffic-control-point-primary.png"); }
+/* hide townlayer helper in layer switcher */
+#layer-townlayer {
+	display: none;
+}

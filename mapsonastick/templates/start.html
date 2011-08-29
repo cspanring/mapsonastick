@@ -35,7 +35,7 @@
       <div id="search-container">
 	  	<b>Search for Critical Infrastructure</b>
 	    <input type="text" id="search-field" /><br>
-	    Hit enter to zoom map to result.
+	    Hit enter to zoom map to search result (<span id="searchicon">X</span>)
 	  </div>
       <div class='layers base'>
         <h2 class='layers-title'>Base layers</h2>
@@ -80,16 +80,6 @@
         <img src='{{ url_for('static', filename='images/mapbox-small.png') }}' class='icon'/>
          MapBox</a>
     </span>
-  </div>
-  <div id='kml_window'>
-    <div id='kml-window-inner'>
-      <div class='kml-url-input-wrapper'>
-        <input type='text' name='kml-url' size='55' id='kml-url' />
-        <input type='button' name='kml-url-submit' id='kml-url-submit' value='Add KML' />
-        or <a href="#" id='kml-url-input-cancel'>Close</a>
-        <p>Enter a URL that points directly to an online KML file eg. <code>http://www.nerac.us/kml</code>. KMZ files must be uploaded.</p>
-      </div>
-    </div>
   </div>
   <script type="text/html" name="page-loading">
     <div class="loading page-loading"></div>
