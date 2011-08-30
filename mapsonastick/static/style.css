@@ -1150,6 +1150,41 @@ div.openlayers-blockswitcher div.form-item {
 }
 #layer-secondary-traffic-control-points { background-image: url("images/traffic-control-point-secondary.png"); }
 #layer-primary-traffic-control-points { background-image: url("images/traffic-control-point-primary.png"); }
+#layer-basemap { background-image: url("images/basemap.png"); }
+#layer-orthophoto { background-image: url("images/orthophoto.png"); }
+#layer-nerac-boundary { 
+	background-image: url("images/nerac-boundary.png"); 
+	background-position: 0px 8px;
+}
+#layer-municipality-names { 
+	background-image: url("images/municipality-names.png"); 
+	background-position: 0px 5px;
+}
+#layer-evacuation-zones { 
+	background-image: url("images/evacuation-zones.png"); 
+	background-position: 0px 8px;
+}
+#layer-primary-evacuation-routes { 
+	background-image: url("images/primary-evacuation-routes.png"); 
+	background-position: 0px 8px;
+}
+#layer-secondary-evacuation-routes { 
+	background-image: url("images/secondary-evacuation-routes.png"); 
+	background-position: 0px 8px;
+}
+#layer-gas-pipelines { 
+	background-image: url("images/gas-pipelines.png"); 
+	background-position: 0px 8px;
+}
+#layer-road-flooding { 
+	background-image: url("images/road-flooding.png"); 
+	background-position: 0px 5px;
+}
+#layer-road-route-numbers { 
+	background-image: url("images/road-route-numbers.png"); 
+	background-position: 0px 5px;
+}
+#layer-search-result { background-image: url("images/search-result.png"); }
 /* hide townlayer helper in layer switcher */
 #layer-townlayer {
 	display: none;
