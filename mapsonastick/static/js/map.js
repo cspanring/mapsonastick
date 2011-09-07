@@ -277,10 +277,12 @@ function load_layers() {
     searchResultLayer = new OpenLayers.Layer.Vector("Search Result", {
     	visibility: false,
 		styleMap: new OpenLayers.StyleMap({
-			fillColor: "rgb(255,0,0)",
-			fillOpacity: 1,
-			pointRadius: 16,
-			graphicName: "x"
+			// fillColor: "rgb(255,0,0)",
+			fillOpacity: 0,
+			strokeColor: "#FFFF00",
+			strokeWidth: 2
+			// pointRadius: 16,
+			// graphicName: "x"
         })
 	});
 	map.addLayer(searchResultLayer);
@@ -347,27 +349,27 @@ $(window).load(
     });   
     
     // jquery type-ahead search
-    $.getJSON('static/js/nerac_search.geojson', function(searchindex) {
+    $.getJSON('static/js/nerac_streets.geojson', function(streets) {
     	
-    	var search_index = [];
+    	var street_index = [];
     	
-		$.each(searchindex.features, function(key, feature) {
-	        search_index.push(feature.properties.searchterm);
+		$.each(streets.features, function(key, feature) {
+	        street_index.push(feature.properties.name);
 	    });	    
     	
-		$("#search-field").autocomplete(search_index, {
+		$("#search-field").autocomplete(street_index, {
 			matchContains: true,
 			formatItem: function(data, i, total) {
 				// remove feature ID from search string
 				search_term = data[0].split("|")[0];
-				return search_term.substring(0, search_term.length - 1);
+				return search_term.substring(0, search_term.length);
 			}
 		});
     	
 		$('#search-field').result(function(event, data, formatted) {
 			var search_id = data[0].split("|")[1];
 			// go zoom to found feature
-			var search_feature = $.geoJSONparser.read(searchindex.features[search_id])[0];
+			var search_feature = $.geoJSONparser.read(streets.features[search_id])[0];
 			// remove existing search result and turn layer on
 			searchResultLayer.destroyFeatures();
 			searchResultLayer.setVisibility(true);
