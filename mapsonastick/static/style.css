@@ -893,9 +893,9 @@ ul.legend li img {
 }
 
 #disclaimer {
-	font-size: 16px;
-	padding-left: 10px;
-    padding-top: 20px;
+	font-size: 12px;
+    padding-top: 24px;
+    text-align: center;
 }
 
 /* Uniform styles */
@@ -1185,7 +1185,6 @@ div.openlayers-blockswitcher div.form-item {
 	background-position: 0px 5px;
 }
 #layer-search-result { background-image: url("images/search-result.png"); }
-/* hide townlayer helper in layer switcher */
-#layer-townlayer {
+#layer-townlayer, #layer-search-result {
 	display: none;
 }
