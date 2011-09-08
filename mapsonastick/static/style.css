@@ -1117,7 +1117,7 @@ div.openlayers-blockswitcher div.form-item {
 }
 #layer-emergency-operations-center { background-image: url("images/emergency-operations-center.png"); }
 #layer-fire-stations { background-image: url("images/fire.png"); }
-#layer-hazmat-sites { background-image: url("images/hazmat-site.png"); }
+#layer-hazmat-locations { background-image: url("images/hazmat-location.png"); }
 #layer-helicopter-landing-zones { background-image: url("images/helicopter-landing-zone.png"); }
 #layer-high-probability-sites { background-image: url("images/high-probability-site.png"); }
 #layer-hospitals { background-image: url("images/hospital.png"); }
