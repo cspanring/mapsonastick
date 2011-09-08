@@ -312,7 +312,7 @@ $(window).load(
           20037508.34, 20037508.34)
     });
 	
-    load_layers();
+    // load_layers();
 	
 	// add GeoJSON parser
    	$.geoJSONparser = new OpenLayers.Format.GeoJSON({
@@ -359,6 +359,7 @@ $(window).load(
     	
 		$("#search-field").autocomplete(street_index, {
 			matchContains: true,
+			max: 30,
 			formatItem: function(data, i, total) {
 				// remove feature ID from search string
 				search_term = data[0].split("|")[0];
