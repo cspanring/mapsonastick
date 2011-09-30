@@ -12,7 +12,7 @@
  * @version 2.0
  */
 
-var map, selectedFeature, townLayer, searchResultLayer;
+var map, selectedFeature, townLayer, searchResultLayer, iwLayer;
 
 // message wrapper, replaceable by TileMill components
 function moas_message(title, message, type) {
@@ -312,7 +312,7 @@ $(window).load(
           20037508.34, 20037508.34)
     });
 	
-    // load_layers();
+    load_layers();
 	
 	// add GeoJSON parser
    	$.geoJSONparser = new OpenLayers.Format.GeoJSON({
@@ -348,7 +348,7 @@ $(window).load(
 	
     });   
     
-    // jquery type-ahead search
+    // jquery type-ahead search for streets
     $.getJSON('static/js/nerac_streets.geojson', function(streets) {
     	
     	var street_index = [];

@@ -162,6 +162,13 @@ OpenLayersPlusBlockswitcher.redraw = function() {
               .data('layer', layer)
               .click(this.selectStyle);
           }
+          // set visual helper to see which layer has enabled infowindows
+          if (layer === iwLayer) {
+            $(inputElem).css('background-color', '#F0E68C');
+          } 
+          if ($('input', inputElem).is(':checked') === false) {
+            $(inputElem).css('background-color', 'transparent');
+          }
         }
       }
     }
@@ -223,6 +230,18 @@ OpenLayersPlusBlockswitcher.layerClick = function(element) {
   }
   else {
     layer.setVisibility($(element).is(':checked'));
+    // workaround for issue when features are no longer selectable
+    // in KML layer
+    layer.refresh({ force: true });
+    // set layer which has info windows enabled
+    if ($(element).is(':checked')) {
+      iwLayer = layer;
+    }
+    // TODO: mark layer in block with active popups
+    // #F0E68C
+    // transparent
+    //$(element).parent().parent().css({'background-color': '#F0E68C'});
+    // $(element).parent().parent().addClass('iw-active');
   }
 };
 
